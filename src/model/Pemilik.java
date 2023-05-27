@@ -29,18 +29,18 @@ public class Pemilik extends Orang
     }
 
     public void beliSapi(int berat) {
-        Sapi tempSapi = (Sapi) AnimalFactory.addFromBuying("sapi", berat); 
-        sapiSapi.add(tempSapi);
+//        Sapi tempSapi = (Sapi) AnimalFactory.addFromBuying("sapi", berat); 
+//        sapiSapi.add(tempSapi);
         // masukkanKeKandang(tempSapi);
         // System.out.println("sapi '" + tempSapi.getKode() + "' terdaftar!");
     }
 
     public void beliKambing(int berat) {
-        kambingKambing.add((Kambing) AnimalFactory.addFromBuying("kambing", berat));
+//        kambingKambing.add((Kambing) AnimalFactory.addFromBuying("kambing", berat));
     }
 
     public void beliDomba(int berat) {
-        dombaDomba.add((Domba) AnimalFactory.addFromBuying("domba", berat));
+//        dombaDomba.add((Domba) AnimalFactory.addFromBuying("domba", berat));
     }
     
     public void infoSapi(String kode) 
@@ -82,6 +82,18 @@ public class Pemilik extends Orang
         throw new NoSuchElementException("Kambing dengan kode " + kode + " tidak ditemukan");
     }
 
+    public int totalHewan(){
+        return Sapi.getCounter() + Kambing.getCounter() + Domba.getCounter();
+    }
+    
+    public int totalKandang(){
+        int tmp = 0;
+        for(Kandang kandang : kumpulanKandang){
+            tmp = kandang.getKapasitas();
+        }
+        return tmp;
+    }
+    
     public void infoKandangKosong() 
     {
         System.out.println("Cek kamar kosong... \n");

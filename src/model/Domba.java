@@ -1,27 +1,32 @@
 package model;
 
+import controller.Database;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;  
 
-public class Kambing implements Animal 
+public class Domba implements Animal 
 {
+    private Database database = new Database();
     private static int counter = 0;
     private String kode;
     private String jenis;
+    private String jenis_kelamin;
     private LocalDateTime tanggalDaftar;
     private String asal;
     private int berat;
     private int usia;
     private String noKamar;
+    private String noKandang;
     private boolean statusTerjual;
     private boolean statusKesehatan;
     private boolean statusVaksin;
     private boolean statusMakan;
 
-    public Kambing(LocalDateTime tanggalDaftar, String asal, int berat) {
+    public Domba(LocalDateTime tanggalDaftar, String jenisKelamin, String asal, int berat) {
         this.kode = generateKode();
-        this.jenis = "Kambing";
+        this.jenis = "Domba";
+        this.jenis_kelamin = jenisKelamin;
         this.tanggalDaftar = tanggalDaftar;
         this.usia = hitungUsia(tanggalDaftar);
         this.asal = asal;
@@ -61,10 +66,16 @@ public class Kambing implements Animal
     public String generateKode() {
         // TODO Auto-generated method stub
         counter++;
-        String id = "2" + String.format("%03d", counter);
+        String id = database.getIdTerbaru();
+        
+        if (id.length() == 3) {
+            id = "3" + id;
+        } else {
+            id = "3" + id.substring(1);
+        }
         return id;
-    }
-    
+    }    
+
     public String tanggalDaftarToString(LocalDateTime tanggalDaftar) {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String formatDateTime = tanggalDaftar.format(format);
@@ -76,7 +87,7 @@ public class Kambing implements Animal
     }
 
     public static void setCounter(int counter) {
-        Kambing.counter = counter;
+        Domba.counter = counter;
     }
 
     public String getKode() {
@@ -99,5 +110,89 @@ public class Kambing implements Animal
 
     public void setJenis(String jenis) {
         this.jenis = jenis;
+    }
+
+    public String getJenis_kelamin() {
+        return jenis_kelamin;
+    }
+
+    public void setJenis_kelamin(String jenis_kelamin) {
+        this.jenis_kelamin = jenis_kelamin;
+    }
+
+    public LocalDateTime getTanggalDaftar() {
+        return tanggalDaftar;
+    }
+
+    public void setTanggalDaftar(LocalDateTime tanggalDaftar) {
+        this.tanggalDaftar = tanggalDaftar;
+    }
+
+    public String getAsal() {
+        return asal;
+    }
+
+    public void setAsal(String asal) {
+        this.asal = asal;
+    }
+
+    public int getBerat() {
+        return berat;
+    }
+
+    public void setBerat(int berat) {
+        this.berat = berat;
+    }
+
+    public int getUsia() {
+        return usia;
+    }
+
+    public void setUsia(int usia) {
+        this.usia = usia;
+    }
+
+    public String getNoKamar() {
+        return noKamar;
+    }
+
+    public String getNoKandang() {
+        return noKandang;
+    }
+
+    public void setNoKandang(String noKandang) {
+        this.noKandang = noKandang;
+    }
+
+    public boolean isStatusTerjual() {
+        return statusTerjual;
+    }
+
+    public void setStatusTerjual(boolean statusTerjual) {
+        this.statusTerjual = statusTerjual;
+    }
+
+    public boolean isStatusKesehatan() {
+        return statusKesehatan;
+    }
+
+    public void setStatusKesehatan(boolean statusKesehatan) {
+        this.statusKesehatan = statusKesehatan;
+    }
+
+    public boolean isStatusVaksin() {
+        return statusVaksin;
+    }
+
+    public void setStatusVaksin(boolean statusVaksin) {
+        this.statusVaksin = statusVaksin;
+    }
+
+    public boolean isStatusMakan() {
+        return statusMakan;
+    }
+
+    public void setStatusMakan(boolean statusMakan) {
+        this.statusMakan = statusMakan;
     }
 }

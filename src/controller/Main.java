@@ -1,4 +1,4 @@
-package shaunthesheep;
+package controller;
 
 import java.time.LocalDateTime;
 import model.Kandang;
