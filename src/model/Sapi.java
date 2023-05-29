@@ -8,6 +8,7 @@ import java.util.Formatter;
 
 public class Sapi implements Animal, Observer {
     private Database database = new Database();
+    private static long hargaPasar = 50600;
     private static int counter = 0;
     private String kode;
     private String jenis;
@@ -16,6 +17,7 @@ public class Sapi implements Animal, Observer {
     private String asal;
     private int berat;
     private int usia;
+    private long harga;
     private String noKamar;
     private String noKandang;
     private boolean statusTerjual;
@@ -23,14 +25,15 @@ public class Sapi implements Animal, Observer {
     private boolean statusVaksin;
     private boolean statusMakan;
     
-    public Sapi(LocalDateTime tanggalDaftar,String jenisKelamin, String asal, int berat) {
+    public Sapi(LocalDateTime tanggalDaftar, String jenisKelamin, String asal, int berat, int usia) {
         this.kode = generateKode();
         this.tanggalDaftar = tanggalDaftar;
-        this.usia = hitungUsia(tanggalDaftar);
+        this.usia = usia + hitungUsia(tanggalDaftar);
         this.jenis = "Sapi";
         this.jenis_kelamin = jenisKelamin;
         this.asal = asal;
         this.berat = berat;
+        this.harga = hitungHarga();
         this.noKamar = null;
         this.statusTerjual = false;
         this.statusKesehatan = false;
@@ -58,14 +61,19 @@ public class Sapi implements Animal, Observer {
     public int hitungUsia(LocalDateTime tanggalDaftar) {
         // TODO Auto-generated method stub
         LocalDateTime now = LocalDateTime.now();
-        long days = ChronoUnit.DAYS.between(tanggalDaftar, now);
-        return (int) days;
+        long months = ChronoUnit.MONTHS.between(tanggalDaftar, now);
+        return (int) months;
+    }
+    
+    public long hitungHarga(){
+        long tmp = (long) this.berat * this.hargaPasar;
+        return tmp;
     }
 
     @Override
     public String generateKode() {
         counter++;
-        String id = database.getIdTerbaru();
+        String id = database.getIdTerbaruSapi();
         
         if (id.length() == 3) {
             id = "1" + id;
@@ -97,6 +105,22 @@ public class Sapi implements Animal, Observer {
         Sapi.counter = counter;
     }
 
+    public static long getHargaPasar() {
+        return hargaPasar;
+    }
+
+    public static void setHargaPasar(long hargaPasar) {
+        Sapi.hargaPasar = hargaPasar;
+    }
+
+    public long getHarga() {
+        return harga;
+    }
+
+    public void setHarga(long harga) {
+        this.harga = harga;
+    }
+    
     public String getKode() {
         return kode;
     }
@@ -107,7 +131,6 @@ public class Sapi implements Animal, Observer {
 
     @Override
     public void setNoKamar(String nomor) {
-        // TODO Auto-generated method stub
         this.noKamar = nomor;
     }
 

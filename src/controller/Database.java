@@ -55,7 +55,7 @@ public class Database
         }
     }
     
-    public String getIdTerbaru() {
+    public String getIdTerbaruSapi() {
         String idTerbaru = "";
 
         try {
@@ -101,6 +101,98 @@ public class Database
         return idTerbaru;
     }
 
+    public String getIdTerbaruKambing() {
+        String idTerbaru = "";
+
+        try {
+            // Mendapatkan ID terakhir dari sapi yang baru ditambahkan
+            try (
+                Connection connection = getConnection()) {
+                String getLastIDQuery = "SELECT id FROM tabel_kambing ORDER BY id DESC LIMIT 1";
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(getLastIDQuery);
+
+                int lastID;
+                if (resultSet.next()) {
+                    lastID = resultSet.getInt("id");
+                    lastID++; // Menambahkan 1 ke ID terakhir
+                } else {
+                    lastID = 1; // Jika tidak ada record, mulai dari 1
+                }
+
+                String getIdQuery = "SELECT id FROM tabel_kambing";
+                ResultSet idResultSet = statement.executeQuery(getIdQuery);
+                List<String> idList = new ArrayList<>();
+                while (idResultSet.next()) {
+                    String id = idResultSet.getString("id");
+                    idList.add(id);
+                }
+
+                String missingIdResult = findMissingId(idList, lastID);
+                if (missingIdResult.equals("No missing ID found")) {
+                    idTerbaru = String.format("%03d", lastID);
+                } else {
+                    idTerbaru = missingIdResult;
+                }
+
+                // Menutup koneksi
+                resultSet.close();
+                statement.close();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return idTerbaru;
+    }
+        
+    public String getIdTerbaruDomba() {
+        String idTerbaru = "";
+
+        try {
+            // Mendapatkan ID terakhir dari sapi yang baru ditambahkan
+            try (
+                Connection connection = getConnection()) {
+                String getLastIDQuery = "SELECT id FROM tabel_domba ORDER BY id DESC LIMIT 1";
+                Statement statement = connection.createStatement();
+                ResultSet resultSet = statement.executeQuery(getLastIDQuery);
+
+                int lastID;
+                if (resultSet.next()) {
+                    lastID = resultSet.getInt("id");
+                    lastID++; // Menambahkan 1 ke ID terakhir
+                } else {
+                    lastID = 1; // Jika tidak ada record, mulai dari 1
+                }
+
+                String getIdQuery = "SELECT id FROM tabel_domba";
+                ResultSet idResultSet = statement.executeQuery(getIdQuery);
+                List<String> idList = new ArrayList<>();
+                while (idResultSet.next()) {
+                    String id = idResultSet.getString("id");
+                    idList.add(id);
+                }
+
+                String missingIdResult = findMissingId(idList, lastID);
+                if (missingIdResult.equals("No missing ID found")) {
+                    idTerbaru = String.format("%03d", lastID);
+                } else {
+                    idTerbaru = missingIdResult;
+                }
+
+                // Menutup koneksi
+                resultSet.close();
+                statement.close();
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return idTerbaru;
+    }
+        
     public static String findMissingId(List<String> idList, int lastID) {
         int expectedId = 1;
         for (String id : idList) {
@@ -121,7 +213,7 @@ public class Database
         Connection conn = getConnection();
         
         try {
-            String sql="INSERT INTO tabel_sapi VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql="INSERT INTO tabel_sapi VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             
             pstmt.setString(1, sapi.getKode());
@@ -137,6 +229,7 @@ public class Database
             pstmt.setBoolean(11, sapi.isStatusKesehatan());
             pstmt.setBoolean(12, sapi.isStatusVaksin());
             pstmt.setBoolean(13, sapi.isStatusMakan());
+            pstmt.setLong(14, sapi.getHarga());
 
            pstmt.executeUpdate();
         
@@ -155,7 +248,7 @@ public class Database
         Connection conn = getConnection();
         
         try {
-            String sql="INSERT INTO tabel_kambing VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql="INSERT INTO tabel_kambing VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             
             pstmt.setString(1, kambing.getKode());
@@ -171,6 +264,7 @@ public class Database
             pstmt.setBoolean(11, kambing.isStatusKesehatan());
             pstmt.setBoolean(12, kambing.isStatusVaksin());
             pstmt.setBoolean(13, kambing.isStatusMakan());
+            pstmt.setLong(14, kambing.getHarga());
 
            pstmt.executeUpdate();
         
@@ -188,7 +282,7 @@ public class Database
         Connection conn = getConnection();
         
         try {
-            String sql="INSERT INTO tabel_domba VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql="INSERT INTO tabel_domba VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             
             pstmt.setString(1, domba.getKode());
@@ -204,6 +298,7 @@ public class Database
             pstmt.setBoolean(11, domba.isStatusKesehatan());
             pstmt.setBoolean(12, domba.isStatusVaksin());
             pstmt.setBoolean(13, domba.isStatusMakan());
+            pstmt.setLong(14, domba.getHarga());
 
            pstmt.executeUpdate();
         

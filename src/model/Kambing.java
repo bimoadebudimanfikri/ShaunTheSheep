@@ -8,6 +8,7 @@ import java.time.temporal.ChronoUnit;
 public class Kambing implements Animal {
     private Database database = new Database();
     private static int counter = 0;
+    private static long hargaPasar = 80000;
     private String kode;
     private String jenis;
     private String jenis_kelamin;
@@ -15,6 +16,7 @@ public class Kambing implements Animal {
     private String asal;
     private int berat;
     private int usia;
+    private long harga;
     private String noKamar;
     private String noKandang;
     private boolean statusTerjual;
@@ -22,14 +24,15 @@ public class Kambing implements Animal {
     private boolean statusVaksin;
     private boolean statusMakan;
 
-    public Kambing(LocalDateTime tanggalDaftar, String jenisKelamin, String asal, int berat) {
+    public Kambing(LocalDateTime tanggalDaftar, String jenisKelamin, String asal, int berat, int usia) {
         this.kode = generateKode();
         this.jenis = "Kambing";
         this.jenis_kelamin = jenisKelamin;
         this.tanggalDaftar = tanggalDaftar;
-        this.usia = hitungUsia(tanggalDaftar);
+        this.usia = usia + hitungUsia(tanggalDaftar);
         this.asal = asal;
         this.berat = berat;
+        this.harga = hitungHarga();
         this.noKamar = null;
         this.statusTerjual = false;
         this.statusKesehatan = false;
@@ -57,16 +60,20 @@ public class Kambing implements Animal {
     public int hitungUsia(LocalDateTime tanggalDaftar) {
         // TODO Auto-generated method stub
         LocalDateTime now = LocalDateTime.now();
-        long days = ChronoUnit.DAYS.between(tanggalDaftar, now);
-        return (int) days;
+        long months = ChronoUnit.MONTHS.between(tanggalDaftar, now);
+        return (int) months;
+    }
+    
+    public long hitungHarga(){
+        long tmp = (long) this.berat * this.hargaPasar;
+        return tmp;
     }
 
     @Override
     public String generateKode() {
         // TODO Auto-generated method stub
         counter++;
-        counter++;
-        String id = database.getIdTerbaru();
+        String id = database.getIdTerbaruKambing();
         
         if (id.length() == 3) {
             id = "2" + id;
@@ -82,6 +89,7 @@ public class Kambing implements Animal {
         return formatDateTime;
     }
 
+    /* GETTER AND SETTER */
     public static int getCounter() {
         return counter;
     }
@@ -90,6 +98,22 @@ public class Kambing implements Animal {
         Kambing.counter = counter;
     }
 
+    public static long getHargaPasar() {
+        return hargaPasar;
+    }
+
+    public static void setHargaPasar(long hargaPasar) {
+        Kambing.hargaPasar = hargaPasar;
+    }
+
+    public long getHarga() {
+        return harga;
+    }
+
+    public void setHarga(long harga) {
+        this.harga = harga;
+    }
+    
     public String getKode() {
         return kode;
     }

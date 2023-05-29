@@ -47,9 +47,11 @@ public class BeliPanel extends javax.swing.JPanel {
         isSapi = new javax.swing.JRadioButton();
         jLabel8 = new javax.swing.JLabel();
         beratSpinner = new javax.swing.JSpinner();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        btnBeriVaksin2 = new javax.swing.JButton();
+        btnBeli = new javax.swing.JButton();
+        usiaSpinner = new javax.swing.JSpinner();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
 
         panelKanan1.setBackground(new java.awt.Color(204, 255, 255));
         panelKanan1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -69,7 +71,10 @@ public class BeliPanel extends javax.swing.JPanel {
         btnGroupJenisHewan.add(isKambing);
         isKambing.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         isKambing.setForeground(new java.awt.Color(51, 51, 51));
-        isKambing.setText(" k a m b i n g");
+        isKambing.setText(" kambing");
+        isKambing.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        isKambing.setBorderPainted(true);
+        isKambing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         isKambing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 isKambingActionPerformed(evt);
@@ -80,7 +85,10 @@ public class BeliPanel extends javax.swing.JPanel {
         btnGroupJenisHewan.add(isDomba);
         isDomba.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         isDomba.setForeground(new java.awt.Color(51, 51, 51));
-        isDomba.setText(" d o m b a");
+        isDomba.setText(" domba");
+        isDomba.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        isDomba.setBorderPainted(true);
+        isDomba.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         isDomba.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 isDombaActionPerformed(evt);
@@ -92,6 +100,9 @@ public class BeliPanel extends javax.swing.JPanel {
         isJantan.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         isJantan.setForeground(new java.awt.Color(51, 51, 51));
         isJantan.setText("jantan");
+        isJantan.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
+        isJantan.setBorderPainted(true);
+        isJantan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         isJantan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 isJantanActionPerformed(evt);
@@ -103,6 +114,9 @@ public class BeliPanel extends javax.swing.JPanel {
         isBetina.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         isBetina.setForeground(new java.awt.Color(51, 51, 51));
         isBetina.setText("betina");
+        isBetina.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        isBetina.setBorderPainted(true);
+        isBetina.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         isBetina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 isBetinaActionPerformed(evt);
@@ -113,8 +127,11 @@ public class BeliPanel extends javax.swing.JPanel {
         btnGroupJenisHewan.add(isSapi);
         isSapi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         isSapi.setForeground(new java.awt.Color(51, 51, 51));
-        isSapi.setText(" s a p i");
+        isSapi.setText(" sapi");
+        isSapi.setAlignmentY(0.0F);
         isSapi.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        isSapi.setBorderPainted(true);
+        isSapi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         isSapi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 isSapiActionPerformed(evt);
@@ -129,23 +146,31 @@ public class BeliPanel extends javax.swing.JPanel {
         beratSpinner.setModel(new javax.swing.SpinnerNumberModel(10, 10, null, 1));
         beratSpinner.setOpaque(true);
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel9.setText("Harga");
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setText("Rp");
-
-        btnBeriVaksin2.setBackground(new java.awt.Color(0, 153, 153));
-        btnBeriVaksin2.setForeground(new java.awt.Color(255, 255, 255));
-        btnBeriVaksin2.setText("B E L I");
-        btnBeriVaksin2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnBeriVaksin2.addActionListener(new java.awt.event.ActionListener() {
+        btnBeli.setBackground(new java.awt.Color(0, 153, 153));
+        btnBeli.setForeground(new java.awt.Color(255, 255, 255));
+        btnBeli.setText("B E L I");
+        btnBeli.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnBeli.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBeriVaksin2ActionPerformed(evt);
+                btnBeliActionPerformed(evt);
             }
         });
+
+        usiaSpinner.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        usiaSpinner.setModel(new javax.swing.SpinnerNumberModel());
+        usiaSpinner.setOpaque(true);
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel11.setText("kg");
+
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel12.setText("bulan");
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel13.setText("Usia");
 
         javax.swing.GroupLayout panelSapi1Layout = new javax.swing.GroupLayout(panelSapi1);
         panelSapi1.setLayout(panelSapi1Layout);
@@ -154,52 +179,57 @@ public class BeliPanel extends javax.swing.JPanel {
             .addGroup(panelSapi1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelSapi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBeriVaksin2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panelSapi1Layout.createSequentialGroup()
+                        .addComponent(isSapi, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(isKambing, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(isDomba, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel8)
+                    .addGroup(panelSapi1Layout.createSequentialGroup()
+                        .addComponent(beratSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel11)
+                        .addGap(33, 33, 33)
+                        .addGroup(panelSapi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(usiaSpinner, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel12))
                     .addComponent(jLabel7)
                     .addGroup(panelSapi1Layout.createSequentialGroup()
-                        .addComponent(isSapi, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(isKambing)
-                        .addGap(18, 18, 18)
-                        .addComponent(isDomba))
-                    .addGroup(panelSapi1Layout.createSequentialGroup()
-                        .addGroup(panelSapi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelSapi1Layout.createSequentialGroup()
-                                .addComponent(isJantan, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(panelSapi1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(49, 49, 49)))
-                        .addComponent(isBetina, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(beratSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                        .addComponent(isJantan, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(isBetina, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
         panelSapi1Layout.setVerticalGroup(
             panelSapi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelSapi1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelSapi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(isKambing)
-                    .addComponent(isDomba)
-                    .addComponent(isSapi))
-                .addGap(30, 30, 30)
+                .addGroup(panelSapi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(isKambing, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(isSapi, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(isDomba, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelSapi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(isJantan)
-                    .addComponent(isBetina))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
+                    .addComponent(isJantan, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(isBetina, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(panelSapi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(beratSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(btnBeriVaksin2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelSapi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(beratSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usiaSpinner, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addComponent(btnBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -224,7 +254,7 @@ public class BeliPanel extends javax.swing.JPanel {
                 .addComponent(title1)
                 .addGap(27, 27, 27)
                 .addComponent(panelSapi1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -259,11 +289,12 @@ public class BeliPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_isSapiActionPerformed
 
-    private void btnBeriVaksin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBeriVaksin2ActionPerformed
+    private void btnBeliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBeliActionPerformed
         // TODO add your handling code here:
         int berat = (Integer) beratSpinner.getValue();
-        String jk;
+        int usia = (Integer) usiaSpinner.getValue();
         
+        String jk;        
         if(isJantan.isSelected()){
             jk = "jantan";
         } else {
@@ -272,30 +303,49 @@ public class BeliPanel extends javax.swing.JPanel {
         
         try {
             if(isSapi.isSelected()){
-                Sapi tempSapi = (Sapi) AnimalFactory.addFromBuying("sapi", jk, berat); 
+                Sapi tempSapi = (Sapi) AnimalFactory.addFromBuying("sapi", jk, berat, usia); 
                 Database.getInstance().insertSapi(tempSapi);
-                JOptionPane.showMessageDialog(this, "Sukses Tersimpan");
-
+                JOptionPane.showMessageDialog(this, """
+                                                    Sapi Berhasil Dibeli!
+                                                    
+                                                    jk: """ + tempSapi.getJenis_kelamin()+ 
+                                                    "\nberat: "+ tempSapi.getBerat() + 
+                                                    "\nusia" + tempSapi.getUsia() +
+                                                    "\nharga: " + tempSapi.getHarga()
+                );
             } else if(isKambing.isSelected()){
-                Kambing tempKambing = (Kambing) AnimalFactory.addFromBuying("kambing", jk, berat); 
+                Kambing tempKambing = (Kambing) AnimalFactory.addFromBuying("kambing", jk, berat, usia); 
                 Database.getInstance().insertKambing(tempKambing);
-                JOptionPane.showMessageDialog(this, "Sukses Tersimpan");
-
+                JOptionPane.showMessageDialog(this, """
+                                                    Kambing Berhasil Dibeli!
+                                                    
+                                                    jk: """ + tempKambing.getJenis_kelamin()+ 
+                                                    "\nberat: "+ tempKambing.getBerat() + 
+                                                    "\nusia" + tempKambing.getUsia() +
+                                                    "\nharga: " + tempKambing.getHarga()
+                );
             } else {
-                Domba tempDomba = (Domba) AnimalFactory.addFromBuying("domba", jk, berat); 
+                Domba tempDomba = (Domba) AnimalFactory.addFromBuying("domba", jk, berat, usia); 
                 Database.getInstance().insertDomba(tempDomba);
-                JOptionPane.showMessageDialog(this, "Sukses Tersimpan");
+                JOptionPane.showMessageDialog(this, """
+                                                    Domba Berhasil Dibeli!
+                                                    
+                                                    jk: """ + tempDomba.getJenis_kelamin()+ 
+                                                    "\nberat: "+ tempDomba.getBerat() + 
+                                                    "\nusia" + tempDomba.getUsia() +
+                                                    "\nharga: " + tempDomba.getHarga()
+                );
             }
         } catch (SQLException ex) {
             System.err.println(ex);
             JOptionPane.showMessageDialog(this, "Gagal menyimpan data", "Gagal", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btnBeriVaksin2ActionPerformed
+    }//GEN-LAST:event_btnBeliActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSpinner beratSpinner;
-    private javax.swing.JButton btnBeriVaksin2;
+    private javax.swing.JButton btnBeli;
     private javax.swing.ButtonGroup btnGroupJenisHewan;
     private javax.swing.ButtonGroup btnGroupJenisKelamin;
     private javax.swing.JRadioButton isBetina;
@@ -303,12 +353,14 @@ public class BeliPanel extends javax.swing.JPanel {
     private javax.swing.JRadioButton isJantan;
     private javax.swing.JRadioButton isKambing;
     private javax.swing.JRadioButton isSapi;
-    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel panelKanan1;
     private javax.swing.JPanel panelSapi1;
     private javax.swing.JLabel title1;
+    private javax.swing.JSpinner usiaSpinner;
     // End of variables declaration//GEN-END:variables
 }

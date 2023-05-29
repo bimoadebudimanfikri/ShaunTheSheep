@@ -41,6 +41,7 @@ public class MainFrame extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         btnBreed = new javax.swing.JButton();
         btnBeriVaksin = new javax.swing.JButton();
+        btnKandang = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 153, 153));
@@ -162,6 +163,16 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
+        btnKandang.setBackground(new java.awt.Color(0, 153, 153));
+        btnKandang.setForeground(new java.awt.Color(255, 255, 255));
+        btnKandang.setText("KANDANG");
+        btnKandang.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnKandang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKandangActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout basePanelLayout = new javax.swing.GroupLayout(basePanel);
         basePanel.setLayout(basePanelLayout);
         basePanelLayout.setHorizontalGroup(
@@ -179,7 +190,8 @@ public class MainFrame extends javax.swing.JFrame {
                     .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnBreed, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnBeriVaksin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBeriVaksin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnKandang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -206,7 +218,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(btnBeriMakan, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBeriVaksin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnKandang, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -267,6 +281,10 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBeriVaksinActionPerformed
 
+    private void btnKandangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKandangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKandangActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -310,6 +328,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnBreed;
     private javax.swing.JButton btnDashboard;
     private javax.swing.JButton btnJual;
+    private javax.swing.JButton btnKandang;
     private javax.swing.JButton btnListHewan;
     private javax.swing.JButton btnListPegawai;
     private javax.swing.JScrollPane contentScrollPane;

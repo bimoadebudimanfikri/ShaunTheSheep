@@ -9,6 +9,7 @@ public class Domba implements Animal
 {
     private Database database = new Database();
     private static int counter = 0;
+    private static long hargaPasar = 87500;
     private String kode;
     private String jenis;
     private String jenis_kelamin;
@@ -16,6 +17,7 @@ public class Domba implements Animal
     private String asal;
     private int berat;
     private int usia;
+    private long harga;
     private String noKamar;
     private String noKandang;
     private boolean statusTerjual;
@@ -23,14 +25,15 @@ public class Domba implements Animal
     private boolean statusVaksin;
     private boolean statusMakan;
 
-    public Domba(LocalDateTime tanggalDaftar, String jenisKelamin, String asal, int berat) {
+    public Domba(LocalDateTime tanggalDaftar, String jenisKelamin, String asal, int berat, int usia) {
         this.kode = generateKode();
         this.jenis = "Domba";
         this.jenis_kelamin = jenisKelamin;
         this.tanggalDaftar = tanggalDaftar;
-        this.usia = hitungUsia(tanggalDaftar);
+        this.usia = usia + hitungUsia(tanggalDaftar);
         this.asal = asal;
         this.berat = berat;
+        this.harga = hitungHarga();
         this.noKamar = null;
         this.statusTerjual = false;
         this.statusKesehatan = false;
@@ -58,15 +61,20 @@ public class Domba implements Animal
     public int hitungUsia(LocalDateTime tanggalDaftar) {
         // TODO Auto-generated method stub
         LocalDateTime now = LocalDateTime.now();
-        long days = ChronoUnit.DAYS.between(tanggalDaftar, now);
-        return (int) days;
+        long months = ChronoUnit.MONTHS.between(tanggalDaftar, now);
+        return (int) months;
     }
-
+    
+    public long hitungHarga(){
+        long tmp = (long) this.berat * this.hargaPasar;
+        return tmp;
+    }
+    
     @Override
     public String generateKode() {
         // TODO Auto-generated method stub
         counter++;
-        String id = database.getIdTerbaru();
+        String id = database.getIdTerbaruDomba();
         
         if (id.length() == 3) {
             id = "3" + id;
@@ -89,7 +97,15 @@ public class Domba implements Animal
     public static void setCounter(int counter) {
         Domba.counter = counter;
     }
+    
+    public static long getHargaPasar() {
+        return hargaPasar;
+    }
 
+    public static void setHargaPasar(long hargaPasar) {
+        Domba.hargaPasar = hargaPasar;
+    }
+    
     public String getKode() {
         return kode;
     }
@@ -152,6 +168,14 @@ public class Domba implements Animal
         this.usia = usia;
     }
 
+    public long getHarga() {
+        return harga;
+    }
+
+    public void setHarga(long harga) {
+        this.harga = harga;
+    }
+    
     public String getNoKamar() {
         return noKamar;
     }
