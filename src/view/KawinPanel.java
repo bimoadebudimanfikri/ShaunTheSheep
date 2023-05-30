@@ -201,8 +201,8 @@ public class KawinPanel extends javax.swing.JPanel
 
     private void btnKawinkanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKawinkanActionPerformed
         // TODO add your handling code here:
-        System.out.println(comboJantan.getSelectedItem().toString());
-        System.out.println(comboBetina.getSelectedItem().toString());
+        // System.out.println(comboJantan.getSelectedItem().toString());
+        // System.out.println(comboBetina.getSelectedItem().toString());
         
         Sapi tempSapiJantan = null;
         for(Sapi sapi: listSapiJantan){

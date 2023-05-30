@@ -322,4 +322,288 @@ public class Database
 //        }
 //        return null;
 //    }
+
+// RISTA START
+public List<Sapi> getListSapiLapar() throws SQLException {
+        List<Sapi> sapiList = new ArrayList<>();
+        Connection conn = getConnection();
+        
+        try {
+            String sql = "SELECT * FROM tabel_sapi WHERE statusMakan = '0'";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            
+            while(rs.next()) {
+                Sapi sapi = new Sapi();
+                sapi.setKode(rs.getString("id"));
+                sapi.setNoKamar(rs.getString("noKamar"));
+                sapi.setBerat(rs.getInt("berat"));
+                sapi.setUsia(rs.getInt("usia"));
+                sapi.setStatusMakan(rs.getBoolean("statusMakan"));
+                
+                sapiList.add(sapi);
+            }
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return sapiList;
+    }
+    
+    public List<Kambing> getListKambingLapar() throws SQLException {
+        List<Kambing> kambingList = new ArrayList<>();
+        Connection conn = getConnection();
+        
+        try {
+            String sql = "SELECT * FROM tabel_kambing";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            
+            while(rs.next()) {
+                Kambing kambing = new Kambing();
+                kambing.setKode(rs.getString("id"));
+                kambing.setNoKamar(rs.getString("noKamar"));
+                kambing.setBerat(rs.getInt("berat"));
+                kambing.setUsia(rs.getInt("usia"));
+                kambing.setStatusMakan(rs.getBoolean("statusMakan"));
+                
+                kambingList.add(kambing);
+            }
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return kambingList;
+    }
+    
+    public List<Domba> getListDombaLapar() throws SQLException {
+        List<Domba> dombaList = new ArrayList<>();
+        Connection conn = getConnection();
+        
+        try {
+            String sql = "SELECT * FROM tabel_domba";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            
+            while(rs.next()) {
+                Domba domba = new Domba();
+                domba.setKode(rs.getString("id"));
+                domba.setNoKamar(rs.getString("noKamar"));
+                domba.setBerat(rs.getInt("berat"));
+                domba.setUsia(rs.getInt("usia"));
+                domba.setStatusMakan(rs.getBoolean("statusMakan"));
+                
+                dombaList.add(domba);
+            }
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return dombaList;
+    }
+    // RISTA END
+    //Afnan Awal
+    public List<Sapi> getListSapi() throws SQLException{
+        List<Sapi> sapiList = new ArrayList<>();
+        Connection conn = getConnection();
+        try{
+            String sql = "SELECT * FROM tabel_sapi";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                Sapi sapi = new Sapi();
+                sapi.setKode(rs.getString("id"));
+                sapi.setNoKandang(rs.getString("noKandang"));
+                sapi.setNoKamar(rs.getString("noKamar"));
+                sapi.setJenis_kelamin(rs.getString("jenis_kelamin"));
+                sapi.setBerat(rs.getInt("berat"));
+                sapi.setUsia(rs.getInt("usia"));
+                sapi.setTanggalDaftar(rs.getTimestamp("tanggalDaftar").toLocalDateTime());
+                sapi.setAsal(rs.getString("asal"));
+                sapi.setStatusTerjual(rs.getBoolean("status_terjual"));
+                sapi.setStatusKesehatan(rs.getBoolean("status_vaksin"));
+                sapi.setStatusVaksin(rs.getBoolean("status_vaksin"));
+                sapi.setStatusMakan(rs.getBoolean("status_makan"));
+                sapi.setHarga(rs.getLong("harga"));
+
+                sapiList.add(sapi);
+            }
+        }catch(SQLException ex){
+            throw ex;
+        } finally{
+            if (conn!=null){
+                conn.close();
+        }
+ }
+ 
+ return sapiList;
+ }
+    //Afnan Akhir
+//KRISTHYNE START
+    public List<Sapi> getListSapiSakit() throws SQLException{
+        List<Sapi> sapiList = new ArrayList<>();
+        Connection conn = getConnection();
+        try
+        {
+            String sql = "SELECT * FROM tabel_sapi WHERE statusVaksin = '0' ";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                Sapi sapi = new Sapi();
+                sapi.setKode(rs.getString("id"));
+                sapi.setStatusVaksin(rs.getBoolean("statusvaksin"));
+                
+                sapiList.add(sapi);
+            }
+        }
+        catch(SQLException ex){
+            throw ex;
+        } finally{
+            if (conn!=null) {
+                conn.close();
+            }
+        }
+        return sapiList;
+    }
+    
+    public List<Sapi> getListSapiSehat() throws SQLException{
+        List<Sapi> sapiList = new ArrayList<>();
+        Connection conn = getConnection();
+        try
+        {
+            String sql = "SELECT * FROM tabel_sapi WHERE statusVaksin = '1' ";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                Sapi sapi = new Sapi();
+                sapi.setKode(rs.getString("id"));
+                sapi.setStatusVaksin(rs.getBoolean("statusvaksin"));
+                
+                sapiList.add(sapi);
+            }
+        }
+        catch(SQLException ex){
+            throw ex;
+        } finally{
+            if (conn!=null) {
+                conn.close();
+            }
+        }
+        return sapiList;
+    }
+    
+    public List<Kambing> getListKambingSakit() throws SQLException{
+        List<Kambing> kambingList = new ArrayList<>();
+        Connection conn = getConnection();
+        try
+        {
+            String sql = "SELECT * FROM tabel_kambing WHERE statusVaksin = '0' ";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                Kambing kambing = new Kambing();
+                kambing.setKode(rs.getString("id"));
+                kambing.setStatusVaksin(rs.getBoolean("statusvaksin"));
+                
+                kambingList.add(kambing);
+            }
+        }
+        catch(SQLException ex){
+            throw ex;
+        } finally{
+            if (conn!=null) {
+                conn.close();
+            }
+        }
+        return kambingList;
+    }
+    
+    public List<Kambing> getListKambingSehat() throws SQLException{
+        List<Kambing> kambingList = new ArrayList<>();
+        Connection conn = getConnection();
+        try
+        {
+            String sql = "SELECT * FROM tabel_kambing WHERE statusVaksin = '1' ";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                Kambing kambing = new Kambing();
+                kambing.setKode(rs.getString("id"));
+                kambing.setStatusVaksin(rs.getBoolean("statusvaksin"));
+                
+                kambingList.add(kambing);
+            }
+        }
+        catch(SQLException ex){
+            throw ex;
+        } finally{
+            if (conn!=null) {
+                conn.close();
+            }
+        }
+        return kambingList;
+    }
+    
+        public List<Domba> getListDombaSakit() throws SQLException{
+        List<Domba> dombaList = new ArrayList<>();
+        Connection conn = getConnection();
+        try
+        {
+            String sql = "SELECT * FROM tabel_domba WHERE statusVaksin = '0' ";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                Domba domba = new Domba();
+                domba.setKode(rs.getString("id"));
+                domba.setStatusVaksin(rs.getBoolean("statusvaksin"));
+                
+                dombaList.add(domba);
+            }
+        }
+        catch(SQLException ex){
+            throw ex;
+        } finally{
+            if (conn!=null) {
+                conn.close();
+            }
+        }
+        return dombaList;
+    }
+    
+        public List<Domba> getListDombaSehat() throws SQLException{
+        List<Domba> dombaList = new ArrayList<>();
+        Connection conn = getConnection();
+        try
+        {
+            String sql = "SELECT * FROM tabel_domba WHERE statusVaksin = '1' ";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                Domba domba = new Domba();
+                domba.setKode(rs.getString("id"));
+                domba.setStatusVaksin(rs.getBoolean("statusvaksin"));
+                
+                dombaList.add(domba);
+            }
+        }
+        catch(SQLException ex){
+            throw ex;
+        } finally{
+            if (conn!=null) {
+                conn.close();
+            }
+        }
+        return dombaList;
+    }
+    //KRISTHYNE END
+    
 }

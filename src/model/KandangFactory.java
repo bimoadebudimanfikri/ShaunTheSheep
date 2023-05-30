@@ -2,5 +2,5 @@ package model;
 
 public class KandangFactory 
 {
-    public static Kandang 
+//    public static Kandang 
 }
