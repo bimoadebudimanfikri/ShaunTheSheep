@@ -40,7 +40,10 @@ public class Sapi implements Animal, Observer {
         this.statusVaksin = false;
         this.statusMakan = false;
     }
-
+    
+    public Sapi(){
+    }
+    
     @Override
     public void getInfo() {
         // TODO Auto-generated method stub

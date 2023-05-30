@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class PengurusPakan extends Orang implements Observable
 {
     private Kandang kandang;
-    private ArrayList<Animal> animals;
+    private ArrayList<Sapi> sapiSapi;
 
     public PengurusPakan(Kandang kandang) {
         this.kandang = kandang;

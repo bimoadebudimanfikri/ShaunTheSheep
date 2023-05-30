@@ -40,6 +40,10 @@ public class Domba implements Animal
         this.statusVaksin = false;
         this.statusMakan = false;
     }
+    
+    public Domba(){
+        
+    }
 
     @Override
     public void getInfo() {

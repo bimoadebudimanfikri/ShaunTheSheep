@@ -5,11 +5,19 @@
         <group>
             <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/view/KandangPanel.java</file>
             <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/view/BeliPanel.java</file>
-            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/Kambing.java</file>
             <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/Domba.java</file>
-            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/Sapi.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/view/KawinPanel.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/view/DashboardPanel.java</file>
             <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/AnimalFactory.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/Observable.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/PengurusPakan.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/Observer.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/Pemilik.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/Kambing.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/Sapi.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/view/MainFrame.java</file>
             <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/controller/Database.java</file>
+            <file>file:/D:/smt%204/pbo/project%20new/ShaunTheSheep/src/model/KandangFactory.java</file>
         </group>
     </open-files>
 </project-private>

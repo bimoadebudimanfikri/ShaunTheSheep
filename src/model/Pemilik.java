@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
+import java.util.Random;
 
 public class Pemilik extends Orang 
 {
@@ -122,5 +123,23 @@ public class Pemilik extends Orang
     
     public void masukkanKeKandang(Animal animal) {
         kandangYangAdaKosongnya().isiKamar(animal);
+    }   
+    
+    public static String getRandomGender() {
+        String[] genders = {"jantan", "betina"};
+        Random random = new Random();
+        int index = random.nextInt(genders.length);
+        return genders[index];
+    }
+        
+    public Sapi breedSapi(Sapi jantan, Sapi betina){
+        if(jantan.getJenis_kelamin().equals("jantan" ) && betina.getJenis_kelamin().equals("betina") && jantan.getUsia() >= 18 && betina.getUsia() >= 18){
+            String jk = getRandomGender();
+            Sapi anakSapi = (Sapi) AnimalFactory.addFromBreeding("sapi", jk, 18, 1);
+            System.out.println("pernikahan berhasil");
+            return anakSapi;
+        }
+        System.out.println("pernikahan gagal");
+        return null;
     }
 }

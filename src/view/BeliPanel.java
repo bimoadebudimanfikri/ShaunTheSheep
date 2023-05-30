@@ -143,7 +143,7 @@ public class BeliPanel extends javax.swing.JPanel {
         jLabel8.setText("Berat");
 
         beratSpinner.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        beratSpinner.setModel(new javax.swing.SpinnerNumberModel(10, 10, null, 1));
+        beratSpinner.setModel(new javax.swing.SpinnerNumberModel(20, 18, null, 1));
         beratSpinner.setOpaque(true);
 
         btnBeli.setBackground(new java.awt.Color(0, 153, 153));
@@ -310,7 +310,7 @@ public class BeliPanel extends javax.swing.JPanel {
                                                     
                                                     jk: """ + tempSapi.getJenis_kelamin()+ 
                                                     "\nberat: "+ tempSapi.getBerat() + 
-                                                    "\nusia" + tempSapi.getUsia() +
+                                                    "\nusia: " + tempSapi.getUsia() +
                                                     "\nharga: " + tempSapi.getHarga()
                 );
             } else if(isKambing.isSelected()){
@@ -321,7 +321,7 @@ public class BeliPanel extends javax.swing.JPanel {
                                                     
                                                     jk: """ + tempKambing.getJenis_kelamin()+ 
                                                     "\nberat: "+ tempKambing.getBerat() + 
-                                                    "\nusia" + tempKambing.getUsia() +
+                                                    "\nusia: " + tempKambing.getUsia() +
                                                     "\nharga: " + tempKambing.getHarga()
                 );
             } else {
@@ -332,7 +332,7 @@ public class BeliPanel extends javax.swing.JPanel {
                                                     
                                                     jk: """ + tempDomba.getJenis_kelamin()+ 
                                                     "\nberat: "+ tempDomba.getBerat() + 
-                                                    "\nusia" + tempDomba.getUsia() +
+                                                    "\nusia: " + tempDomba.getUsia() +
                                                     "\nharga: " + tempDomba.getHarga()
                 );
             }

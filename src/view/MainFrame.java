@@ -275,6 +275,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void btnBreedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBreedActionPerformed
         // TODO add your handling code here:
+        contentScrollPane.setViewportView(new KawinPanel());
     }//GEN-LAST:event_btnBreedActionPerformed
 
     private void btnBeriVaksinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBeriVaksinActionPerformed

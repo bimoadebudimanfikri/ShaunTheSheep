@@ -11,8 +11,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Animal;
+import model.AnimalFactory;
 import model.Domba;
 import model.Kambing;
+import static model.Pemilik.getRandomGender;
 import model.Sapi;
 
 /**
@@ -311,4 +313,13 @@ public class Database
             }
         }    
     }
+    
+//    public Sapi breedSapi(Sapi jantan, Sapi betina){
+//        if(jantan.getJenis_kelamin() == "jantan" && betina.getJenis_kelamin() == "betina" && jantan.getUsia() == 18 && betina.getUsia() == 18){
+//            String jk = getRandomGender();
+//            Sapi anakSapi = (Sapi) AnimalFactory.addFromBreeding("sapi", jk, 18, 1);
+//            return anakSapi;
+//        }
+//        return null;
+//    }
 }

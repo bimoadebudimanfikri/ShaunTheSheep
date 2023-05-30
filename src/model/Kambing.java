@@ -39,6 +39,9 @@ public class Kambing implements Animal {
         this.statusVaksin = false;
         this.statusMakan = false;
     }
+    
+    public Kambing(){
+    }
 
     @Override
     public void getInfo() {
