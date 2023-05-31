@@ -4,6 +4,8 @@
  */
 package view;
 
+import model.KandangFactory;
+
 /**
  *
  * @author Lenovo
@@ -31,10 +33,10 @@ public class KandangPanel extends javax.swing.JPanel {
         title1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btnTambahKandang = new javax.swing.JButton();
+        btnTampilkanKandang = new javax.swing.JButton();
         btnHapusKandang = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboListKandang = new javax.swing.JComboBox<>();
         btnTambahKandang1 = new javax.swing.JButton();
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -76,13 +78,13 @@ public class KandangPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        btnTambahKandang.setBackground(new java.awt.Color(0, 153, 153));
-        btnTambahKandang.setForeground(new java.awt.Color(255, 255, 255));
-        btnTambahKandang.setText("TAMPILKAN");
-        btnTambahKandang.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnTambahKandang.addActionListener(new java.awt.event.ActionListener() {
+        btnTampilkanKandang.setBackground(new java.awt.Color(0, 153, 153));
+        btnTampilkanKandang.setForeground(new java.awt.Color(255, 255, 255));
+        btnTampilkanKandang.setText("TAMPILKAN");
+        btnTampilkanKandang.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnTampilkanKandang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTambahKandangActionPerformed(evt);
+                btnTampilkanKandangActionPerformed(evt);
             }
         });
 
@@ -100,7 +102,7 @@ public class KandangPanel extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Jenis kandang");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "sapi", "domba", "kambing", " " }));
+        comboListKandang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "sapi", "domba", "kambing", " " }));
 
         btnTambahKandang1.setBackground(new java.awt.Color(0, 153, 153));
         btnTambahKandang1.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,9 +129,9 @@ public class KandangPanel extends javax.swing.JPanel {
                             .addGroup(basePanelLayout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(comboListKandang, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(basePanelLayout.createSequentialGroup()
-                                .addComponent(btnTambahKandang, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnTampilkanKandang, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnTambahKandang1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -147,12 +149,12 @@ public class KandangPanel extends javax.swing.JPanel {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(basePanelLayout.createSequentialGroup()
                         .addGap(2, 2, 2)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(comboListKandang, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addGroup(basePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnTambahKandang, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTampilkanKandang, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTambahKandang1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnHapusKandang, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(138, Short.MAX_VALUE))
@@ -172,9 +174,15 @@ public class KandangPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTambahKandangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahKandangActionPerformed
+    private void btnTampilkanKandangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTampilkanKandangActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnTambahKandangActionPerformed
+        String selected = comboListKandang.getSelectedItem().toString();
+        
+        if(selected.equals("sapi")){
+            KandangFactory.buatkandang("sapi", ALLBITS){
+        }
+        }
+    }//GEN-LAST:event_btnTampilkanKandangActionPerformed
 
     private void btnHapusKandangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusKandangActionPerformed
         // TODO add your handling code here:
@@ -188,9 +196,9 @@ public class KandangPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel basePanel;
     private javax.swing.JButton btnHapusKandang;
-    private javax.swing.JButton btnTambahKandang;
     private javax.swing.JButton btnTambahKandang1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnTampilkanKandang;
+    private javax.swing.JComboBox<String> comboListKandang;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;

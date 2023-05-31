@@ -76,10 +76,10 @@
                               <Group type="102" attributes="0">
                                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jComboBox1" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Component id="comboListKandang" min="-2" pref="102" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <Component id="btnTambahKandang" min="-2" pref="96" max="-2" attributes="0"/>
+                                  <Component id="btnTampilkanKandang" min="-2" pref="96" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnTambahKandang1" min="-2" pref="96" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -103,14 +103,14 @@
                       <Component id="jLabel1" min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" min="-2" pref="31" max="-2" attributes="0"/>
+                          <Component id="comboListKandang" min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="202" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnTambahKandang" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="btnTampilkanKandang" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="btnTambahKandang1" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="btnHapusKandang" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
@@ -165,7 +165,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnTambahKandang">
+        <Component class="javax.swing.JButton" name="btnTampilkanKandang">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="0" type="rgb"/>
@@ -181,7 +181,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTambahKandangActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTampilkanKandangActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnHapusKandang">
@@ -214,7 +214,7 @@
             <Property name="text" type="java.lang.String" value="Jenis kandang"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="comboListKandang">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
